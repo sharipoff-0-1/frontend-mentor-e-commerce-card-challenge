@@ -1,0 +1,243 @@
+:root {
+  --Orange: hsl(26, 100%, 55%);
+  --Pale-orange: hsl(25, 100%, 94%);
+
+  --Very-dark-blue: hsl(220, 13%, 13%);
+  --Dark-grayish-blue: hsl(219, 9%, 45%);
+  --Grayish-blue: hsl(220, 14%, 75%);
+  --Light-grayish-blue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --Black: hsla(0, 0%, 0%, 0.753);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  background-color: var(--White);
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nav {
+  width: 100%;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--Grayish-blue);
+  position: relative;
+}
+
+.logo {
+  margin: 0 1rem;
+}
+
+.nav-list {
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  width: 100%;
+  transform: translateX(0);
+}
+
+.list-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 1rem;
+}
+
+.list-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  display: block;
+  background-color: var(--Orange);
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+
+.list-item:hover::before,
+.list-item:focus::before {
+  transform: scaleX(1);
+}
+
+.list-item:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.list-item a {
+  display: block;
+  color: var(--Dark-grayish-blue);
+}
+
+.list-item a:hover,
+.list-item a:focus {
+  color: var(--Very-dark-blue-blue);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 1 20%;
+  margin-left: auto;
+}
+
+.user-img {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.user {
+  width: 100%;
+}
+
+.user-img:hover,
+.user-img:focus {
+  border: 2px solid var(--Orange);
+  border-radius: 50%;
+}
+
+.cart-box {
+  position: relative;
+}
+
+.cart-box::before {
+  content: "3";
+  width: 20px;
+  height: 13px;
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  display: block;
+  background-color: var(--Orange);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 50px;
+}
+
+.user-cart {
+  cursor: pointer;
+}
+
+.user-cart:hover,
+.user-cart:focus {
+  filter: invert(0%) sepia(0%) saturate(9%) hue-rotate(239deg) brightness(100%)
+    contrast(100%);
+}
+
+.hidden {
+  display: none;
+}
+
+.open-btn {
+  display: none;
+  cursor: pointer;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+/*  MEDIA QUERIES OF NAVBAR */
+
+@media screen and (max-width: 800px) {
+  .nav {
+    padding: 1rem 0;
+  }
+
+  .nav-list {
+    width: 50%;
+    min-height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    position: absolute;
+    top: 0;
+    left: -2rem;
+    padding: 4rem 0 2rem 0;
+    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in;
+  }
+
+  .nav-list > * {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+  .list-item:not(:last-child) {
+    margin: 0;
+  }
+
+  .list-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    display: block;
+    background-color: var(--Orange);
+    transform: scaleY(0);
+    transition: transform 0.3s, width 0.2s cubic-bezier(1, 0, 0, 1) 0.2s;
+  }
+
+  .list-item:hover::before,
+  .list-item:focus::before {
+    transform: scaleY(1);
+    width: 100%;
+  }
+
+  .list-item a {
+    color: var(--Very-vark-blue);
+    font-size: 1.2rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 10;
+  }
+
+  .open-btn {
+    display: block;
+  }
+  .close-btn {
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    top: 1.5rem;
+    left: 0.5rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+}
