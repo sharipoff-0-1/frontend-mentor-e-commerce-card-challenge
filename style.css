@@ -18,6 +18,8 @@
   box-sizing: border-box;
 }
 
+/* GLOBAL STYLES */
+
 ul {
   list-style-type: none;
 }
@@ -45,6 +47,8 @@ body {
   margin: 0 auto;
   padding: 0 2rem;
 }
+
+/* NAVBAR */
 
 .nav {
   width: 100%;
@@ -169,6 +173,157 @@ body {
   cursor: pointer;
   width: 1.2rem;
   height: 1.2rem;
+}
+
+.hide-image {
+  display: none;
+}
+
+/* PRODUCT */
+
+.product {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 4rem;
+}
+
+.big-image {
+  max-width: 50em;
+  width: 100%;
+  margin: 2rem 0;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.small-image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.small-image img {
+  max-width: 5.5em;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.2s ease-in;
+}
+
+.small-image img:hover,
+.small-image img:focus {
+  border: 2px solid var(--Orange);
+  opacity: 1;
+}
+
+.product-info {
+  width: 80%;
+  padding: 2rem 4rem;
+  margin-left: 4rem;
+}
+
+.product-info .company {
+  display: block;
+  color: var(--Orange);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.product-info h1 {
+  color: var(--Very-dark-blue);
+  margin-bottom: 2rem;
+}
+
+.product-info .desc {
+  color: var(--Dark-grayish-blue);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.price-tag {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.price-tag .price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--Very-dark-blue);
+  margin-right: 1rem;
+}
+
+.price-tag .price-off {
+  background-color: var(--Pale-orange);
+  color: var(--Orange);
+  font-weight: 700;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0.2rem 0.4rem;
+}
+
+.product-info small {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: line-through;
+  color: var(--Grayish-blue);
+  margin-bottom: 3rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.btn .amount {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--Light-grayish-blue);
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1.3rem 0;
+  border-radius: 8px;
+}
+
+.plus,
+.minus {
+  cursor: pointer;
+}
+
+.btn .add-btn {
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Orange);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--Pale-orange);
+  border: none;
+  border-radius: 8px;
+  padding: 1.3rem 0;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.add-btn:hover {
+  opacity: 0.7;
+}
+
+.add-btn img {
+  width: 1.2rem;
+  margin-right: 1rem;
 }
 
 /*  MEDIA QUERIES OF NAVBAR */
